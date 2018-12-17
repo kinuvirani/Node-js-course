@@ -1,6 +1,7 @@
 const express=require("express");
 const hbs=require('hbs');
 const fs=require('fs');
+const port=process.env.PORT || 2000;
 var app=express();
 hbs.registerPartials(__dirname+'/views/partial');
 app.set('view engine','hbs');
@@ -50,6 +51,6 @@ app.get('/',(req,res)=>
       title:"Home Page"
     });
 });
-app.listen(3000,()=>{
-  console.log("Server run successfully");
+app.listen(port,()=>{
+  console.log(`Server run successfully and port is ${port}`);
 });
